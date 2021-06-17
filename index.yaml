@@ -1,0 +1,12 @@
+apiVersion: v1
+entries:
+  k8s-old-pod-killer:
+  - apiVersion: v1
+    appVersion: 1.0.0
+    created: "2021-06-17T11:08:40.939757308Z"
+    digest: 05cf2cc8e06fd6e0365a4db4a44c45141eda311e7dd71b83961866a9c7f4db7c
+    name: k8s-old-pod-killer
+    urls:
+    - https://github.com/alantang888/helm-charts/releases/download/k8s-old-pod-killer-1.0.0/k8s-old-pod-killer-1.0.0.tgz
+    version: 1.0.0
+generated: "2021-06-17T11:08:40.940740422Z"
