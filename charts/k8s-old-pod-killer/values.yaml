@@ -1,6 +1,6 @@
 image:
   name: quay.io/alantang888/k8s-old-pod-killer
-  tag: 1.0.0
+  tag: 1.0.1
   pullPolicy: Always
 
 extraLabel: {}
