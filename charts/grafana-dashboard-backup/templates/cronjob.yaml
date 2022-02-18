@@ -1,0 +1,42 @@
+apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+  name: {{ .Release.Name }}
+spec:
+  schedule: {{ .Values.schedule }}
+  concurrencyPolicy: Forbid
+  failedJobsHistoryLimit: 10
+  jobTemplate:
+    metadata:
+      labels:
+        app: grafana-dashboard-backup
+    spec:
+      template:
+        metadata:
+          labels:
+            app: grafana-dashboard-backup
+        spec:
+          restartPolicy: Never
+          containers:
+          - name: grafana-dashboard-backup
+            image: {{ .Values.image.repo }}:{{ .Chart.AppVersion }}
+            imagePullPolicy: {{ .Values.image.pullPolicy }}
+            env:
+            - name: GRAFANA_URL
+              value: {{ .Values.config.grafana.url }}
+            - name: GRAFANA_TOKEN
+              valueFrom:
+                secretKeyRef:
+                  name: {{ .Values.config.grafana.apiTokenSecretName }}
+                  key: {{ .Values.config.grafana.apiTokenSecretKey }}
+            - name: GIT_REPO_URL
+              value: {{ .Values.config.git.url }}
+            - name: GIT_USER
+              value: {{ .Values.config.git.username }}
+            - name: GIT_PASSWD
+              valueFrom:
+                secretKeyRef:
+                  name: {{ .Values.config.git.passwdSecretName }}
+                  key: {{ .Values.config.git.passwdTokenSecretKey }}
+            - name: DIR_PREFIX
+              value: {{ .Values.config.git.dirPrefix }}

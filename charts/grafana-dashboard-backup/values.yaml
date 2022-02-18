@@ -1,0 +1,17 @@
+image:
+  repo: alantang888/grafana-dashboard-backup
+  pullPolicy: IfNotPresent
+
+schedule: "0 0 * * *"
+
+config:
+  grafana:
+    url: https://grafana.yourdomain.com
+    apiTokenSecretName: grafana-dashboard-backup
+    apiTokenSecretKey: grafana-token
+  git:
+    url: https://yourdomain.com/grafana_dashboard.git
+    username: yourgituser
+    passwdSecretName: grafana-dashboard-backup
+    passwdTokenSecretKey: git-passwd
+    dirPrefix: ""
