@@ -15,3 +15,5 @@ config:
     passwdSecretName: grafana-dashboard-backup
     passwdTokenSecretKey: git-passwd
     dirPrefix: ""
+    author: NO BODY
+    authorEmail: no-body@example.com
