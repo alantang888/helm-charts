@@ -34,4 +34,13 @@ entries:
     urls:
     - https://github.com/alantang888/helm-charts/releases/download/k8s-old-pod-killer-1.0.0/k8s-old-pod-killer-1.0.0.tgz
     version: 1.0.0
-generated: "2022-02-18T12:59:18.238534234Z"
+  k8s-terminating-pod-killer:
+  - apiVersion: v1
+    appVersion: 1.0.0
+    created: "2022-02-18T13:37:10.88160067Z"
+    digest: 44e7049204a406c34fb04d80c8c4dc70ca75c16c8642342544e67157aac969c7
+    name: k8s-terminating-pod-killer
+    urls:
+    - https://github.com/alantang888/helm-charts/releases/download/k8s-terminating-pod-killer-1.0.0/k8s-terminating-pod-killer-1.0.0.tgz
+    version: 1.0.0
+generated: "2022-02-18T13:37:10.88161037Z"
