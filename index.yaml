@@ -3,6 +3,14 @@ entries:
   grafana-dashboard-backup:
   - apiVersion: v1
     appVersion: 1.0.0
+    created: "2022-02-18T12:59:18.238522534Z"
+    digest: 59068f8507bc571df69dd2af707d8caf1bef54e21865ec7b3144efe390d6f00c
+    name: grafana-dashboard-backup
+    urls:
+    - https://github.com/alantang888/helm-charts/releases/download/grafana-dashboard-backup-1.0.1/grafana-dashboard-backup-1.0.1.tgz
+    version: 1.0.1
+  - apiVersion: v1
+    appVersion: 1.0.0
     created: "2022-02-18T12:49:32.170121655Z"
     digest: fdb1c65ad448a6468980427fa10a47ec1723e2fe9c1d9df7ece28f46076ae31e
     name: grafana-dashboard-backup
@@ -26,4 +34,4 @@ entries:
     urls:
     - https://github.com/alantang888/helm-charts/releases/download/k8s-old-pod-killer-1.0.0/k8s-old-pod-killer-1.0.0.tgz
     version: 1.0.0
-generated: "2022-02-18T12:49:32.170129955Z"
+generated: "2022-02-18T12:59:18.238534234Z"
