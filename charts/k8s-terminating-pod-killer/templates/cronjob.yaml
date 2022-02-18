@@ -1,0 +1,29 @@
+apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+  name: {{ .Release.Name }}
+spec:
+  schedule: {{ .Values.schedule | quote }}
+  concurrencyPolicy: Forbid
+  failedJobsHistoryLimit: 10
+  jobTemplate:
+    metadata:
+      labels:
+        app: {{ .Release.Name }}
+    spec:
+      template:
+        metadata:
+          labels:
+            app: {{ .Release.Name }}
+        spec:
+          serviceAccountName: {{ if .Values.rbac.create }}{{ .Release.Name }}{{ else }}{{ .Values.rbac.serviceAccountOverride }}{{ end }}
+          containers:
+          - name: {{ .Release.Name }}
+            image: {{ .Values.image.repo }}:{{ .Chart.AppVersion }}
+            imagePullPolicy: {{ .Values.image.pullPolicy }}
+            env:
+            - name: NAMESPACE
+              value: {{ .Values.targetNamespace }}
+            - name: KILL_MINUTE
+              value: {{ .Values.killMinute | quote }}
+          restartPolicy: Never

@@ -1,0 +1,14 @@
+image:
+  repo: alantang888/k8s-terminating-pod-killer
+  pullPolicy: IfNotPresent
+
+schedule: "*/15 * * * *"
+# Namespace to check. If empty, it check all namespace. Can use ',' to separate namespaces.
+targetNamespace: "default"
+# How long (minute) to wait before kill. Default 5
+killMinute: 15
+
+rbac:
+  create: true
+  # If rbac.create is false, use serviceAccountOverride for pod's service account
+  serviceAccountOverride: "default"
