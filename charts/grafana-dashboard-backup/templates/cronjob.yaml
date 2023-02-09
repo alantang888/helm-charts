@@ -1,4 +1,4 @@
-apiVersion: batch/v1beta1
+apiVersion: batch/v1
 kind: CronJob
 metadata:
   name: {{ .Release.Name }}
@@ -40,7 +40,13 @@ spec:
                   key: {{ .Values.config.git.passwdTokenSecretKey }}
             - name: DIR_PREFIX
               value: {{ .Values.config.git.dirPrefix }}
+            - name: ALERT_RULE_DIR_PREFIX
+              value: {{ .Values.config.git.alertRuleDirPrefix }}
             - name: GIT_AUTHOR
               value: {{ .Values.config.git.author }}
             - name: GIT_AUTHOR_EMAIL
               value: {{ .Values.config.git.authorEmail }}
+            - name: PUSH_GATEWAY_URL
+              value: {{ .Values.config.prometheusPushgateway.url }}
+            - name: PUSH_JOB_NAME
+              value: {{ .Values.config.prometheusPushgateway.jobName }}
