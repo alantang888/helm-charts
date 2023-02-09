@@ -15,5 +15,9 @@ config:
     passwdSecretName: grafana-dashboard-backup
     passwdTokenSecretKey: git-passwd
     dirPrefix: ""
+    alertRuleDirPrefix: ""
     author: NO BODY
     authorEmail: no-body@example.com
+  prometheusPushgateway:
+    url: ""
+    jobName: "grafana_export"
