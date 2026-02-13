@@ -23,7 +23,7 @@ spec:
             imagePullPolicy: {{ .Values.image.pullPolicy }}
             env:
             - name: NAMESPACE
-              value: {{ .Values.targetNamespace }}
+              value: {{ .Values.targetNamespace | quote }}
             - name: KILL_MINUTE
               value: {{ .Values.killMinute | quote }}
           restartPolicy: Never

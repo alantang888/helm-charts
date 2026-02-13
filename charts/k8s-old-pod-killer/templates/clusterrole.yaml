@@ -17,6 +17,14 @@ rules:
   - statefulsets
   verbs:
   - get
+{{- range $k, $v := .Values.additionalResources }}
+- apiGroups:
+  - {{ $k }}
+  resources:
+  {{ $v | toYaml }}
+  verbs:
+  - get
+{{- end }}
 - apiGroups:
   - ""
   resources:
