@@ -3,6 +3,12 @@ image:
   tag: 1.1.2
   pullPolicy: Always
 
+additionalResources: {}
+  # example:
+  # argoproj.io:
+  # - rollouts
+
+
 extraLabel: {}
 
 config:
