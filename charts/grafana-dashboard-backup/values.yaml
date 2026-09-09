@@ -21,3 +21,6 @@ config:
   prometheusPushgateway:
     url: ""
     jobName: "grafana_export"
+
+nodeSelector: {}
+tolerations: []
