@@ -50,3 +50,11 @@ spec:
               value: {{ .Values.config.prometheusPushgateway.url }}
             - name: PUSH_JOB_NAME
               value: {{ .Values.config.prometheusPushgateway.jobName }}
+          {{- with .Values.nodeSelector }}
+          nodeSelector:
+            {{- toYaml . | nindent 12 }}
+          {{- end }}
+          {{- with .Values.tolerations }}
+          tolerations:
+            {{- toYaml . | nindent 12 }}
+          {{- end }}
